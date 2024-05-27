@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deem</title>
+    <link
+      rel="stylesheet"
+      id="wp-block-library-css"
+      href="assets/style.css"
+      type="text/css"
+      media="all"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0.3em;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 800px;
+        /* border: 3px solid black; */
+        margin: auto;
+        text-align: center;
+        padding: 1em;
+      }
+
+      h1 {
+        margin-bottom: 0.3em;
+        font-size: 50px;
+      }
+
+      .links {
+        width: 100%;
+        max-width: 600px;
+        margin: auto;
+        padding: 0.5em;
+        font-size: 1.2em;
+        margin-bottom: 0.5em;
+      }
+
+      .button-gas {
+        display: block;
+        margin: auto;
+        width: 100%;
+        max-width: 600px;
+        padding: 0.3em 1em;
+        font-size: 1.2em;
+        background-color: rgba(255, 23, 23, 0.967);
+        color: white;
+        border: none;
+      }
+      .button-gas strong {
+        text-shadow: 1px 2px 0.8px rgba(0, 0, 0, 0.5);
+      }
+
+      .button-gas:hover {
+        background: linear-gradient(34deg, #ff0015 27%, #5c2c2c 82%);
+        background-color: rgb(0, 97, 189);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Deem Tools Url</h1>
+      <textarea
+        name="links"
+        class="links"
+        rows="30"
+        placeholder="Masukkan Link / URL"
+      ></textarea>
+      <button class="button-gas">
+        <strong style="color: rgb(255, 255, 255)">GASKAN TERUS</strong>
+      </button>
+    </div>
+
+    <script>
+      // if(links.length == 0) {
+      //     console.log('tes');
+      // }
+
+      const buttonGas = document.querySelector(".button-gas");
+      buttonGas.addEventListener("click", function () {
+        const linksTextArea = document.querySelector(".links");
+        const links = linksTextArea.value.split("\n");
+        if (links == "") {
+          return;
+        }
+
+        links.forEach(function (link) {
+          window.open(link, "_blank");
+        });
+      });
+    </script>
+  </body>
+</html>
